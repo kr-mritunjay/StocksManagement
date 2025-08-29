@@ -1,0 +1,29 @@
+package com.ofss;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "CUSTOMERS")
+public class Customer {
+
+    @Id
+    @Column(name = "CUST_ID")
+    private Integer custId;
+
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "LAST_NAME")
+    private String lastName;
+
+    @Column(name = "PHONE_NUMBER")
+    private Long phoneNumber;
+
+    @Column(name = "CITY")
+    private String city;
+
+    @Column(name = "EMAIL_ID")
+    private String emailId;
+
+    // Getters and Setters
+}

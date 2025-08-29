@@ -1,0 +1,37 @@
+package com.ofss;
+
+import jakarta.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "TRANSACTIONS")
+public class Transactions {
+
+    @Id
+    @Column(name = "TXN_ID")
+    private Integer txnId;
+
+    @ManyToOne
+    @JoinColumn(name = "CUST_ID", referencedColumnName = "CUST_ID")
+    private Customers customer;
+
+    @ManyToOne
+    @JoinColumn(name = "STOCK_ID", referencedColumnName = "STOCK_ID")
+    private Stocks stock;
+
+    @Column(name = "TXN_PRICE")
+    private Double txnPrice;
+
+    @Column(name = "TXN_TYPE")
+    private String txnType;
+
+    @Column(name = "QTY")
+    private Long qty;
+
+    @Column(name = "TXN_DATE")
+    @Temporal(TemporalType.DATE)
+    private Date txnDate;
+
+    // Getters and Setters
+}
+
